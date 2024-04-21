@@ -43,13 +43,13 @@ def save_uploaded_file(uploaded_file):
 
 
 if audio_file is not None:
-    st.audio(audio_file, format="mp3")
+  st.audio(audio_file, format="mp3")
     # Save uploaded audio file
-    file_path = save_uploaded_file(audio_file)
+  file_path = save_uploaded_file(audio_file)
     # Transcribe audio and update query input field
-    st.write("Transcribing audio...")
+  st.write("Transcribing audio...")
     
-notes = stt(file_path)
+  notes = stt(file_path)
 
 
 response = client.chat.completions.create(
