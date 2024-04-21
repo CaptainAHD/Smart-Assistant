@@ -37,9 +37,9 @@ def stt(file_path):
 source_language = st.selectbox("Select Audio Language:", ["English", "Other"])
 audio_file = st.file_uploader("Upload an audio file", type=["mp3"])
 def save_uploaded_file(uploaded_file):
-    with open("temp_audio.mp3", "wb") as f:
-        f.write(uploaded_file.getbuffer())
-    return "temp_audio.mp3"
+  with open("temp_audio.mp3", "wb") as f:
+    f.write(uploaded_file.getbuffer())
+  return "temp_audio.mp3"
 
 
 if audio_file is not None:
