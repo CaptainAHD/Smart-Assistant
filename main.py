@@ -53,9 +53,8 @@ if audio_file is not None:
 
 
 response = client.chat.completions.create(
-    model="gpt-4-1106-preview",
-
-    messages=[{
+  model="gpt-4-1106-preview", 
+  messages=[{
                     "role": "system",
                     "content": f"""Act as Dr. Frida L. Friedman, a report writer who uses a bunch of audio notes transcription and field notes to write detailed reports. These reports are of a very high quality and are cited by academics, think tanks, and even governments.Now I will be giving you a bunch of audio notes transcription and field notes to make detailed reports out of. But remember these points when analyzing the notes:
 
