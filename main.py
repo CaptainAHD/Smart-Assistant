@@ -48,6 +48,7 @@ if audio_file is not None:
     # Transcribe audio and update query input field
   st.write("Transcribing audio...")
   notes = stt(file_path)
+  st.write(notes)
 
 
 response = client.chat.completions.create(
