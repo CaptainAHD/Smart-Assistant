@@ -40,6 +40,8 @@ def save_uploaded_file(uploaded_file):
     with open("temp_audio.mp3", "wb") as f:
         f.write(uploaded_file.getbuffer())
     return "temp_audio.mp3"
+
+
 if audio_file is not None:
     st.audio(audio_file, format="mp3")
     # Save uploaded audio file
@@ -47,11 +49,7 @@ if audio_file is not None:
     # Transcribe audio and update query input field
     st.write("Transcribing audio...")
     
-    notes = stt(file_path)
-    if transcribed_text:
-        st.write("Success! ")
-    else:
-        st.write("Failed to transcribe audio.")
+notes = stt(file_path)
 
 
 response = client.chat.completions.create(
