@@ -49,7 +49,7 @@ if audio_file is not None:
     else:
         st.write("Failed to transcribe audio.")
 
-notes = stt(file_path)
+notes = transcribed_text
 response = client.chat.completions.create(
     model="gpt-4-1106-preview",
 
