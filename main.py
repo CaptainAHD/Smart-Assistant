@@ -48,7 +48,6 @@ if audio_file is not None:
   file_path = save_uploaded_file(audio_file)
     # Transcribe audio and update query input field
   st.write("Transcribing audio...")
-    
   notes = stt(file_path)
 
 
