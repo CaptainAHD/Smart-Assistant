@@ -29,7 +29,7 @@ def stt(file_path):
       response_format="text"
         )
 
-      return transcription
+    return transcription
 
     except Exception as e:
       return f"Exception: {e}"
