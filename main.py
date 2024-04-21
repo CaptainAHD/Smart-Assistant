@@ -81,5 +81,18 @@ response = client.chat.completions.create(
                 },
             ],)
 
+def extract_report_from_variable(content):
+    start_tag = '<report>'
+    end_tag = '</report>'
+    start_index = content.find(start_tag)
+    end_index = content.find(end_tag)
 
-st.write(response.choices[0].message.content)
+    if start_index != -1 and end_index != -1:
+        report_content = content[start_index + len(start_tag):end_index]
+        return report_content
+    else:
+        return "Report tags not found."
+
+extracted_report = extract_report_from_variable(response.choices[0].message.content)
+st.write(extracted_report)
+
