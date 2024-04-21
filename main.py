@@ -18,7 +18,7 @@ from deepgram import (DeepgramClient, PrerecordedOptions,FileSource,)
 
 st.set_page_config(layout="wide")
 
-st.title('Smart Field Assisstant')
+st.title('Smart Field Assistant')
 client = OpenAI()
 def stt(file_path):
   try:
