@@ -32,7 +32,7 @@ def stt(file_path):
       return transcription
 
     except Exception as e:
-        return f"Exception: {e}"
+      return f"Exception: {e}"
 
 source_language = st.selectbox("Select Audio Language:", ["English", "Other"])
 audio_file = st.file_uploader("Upload an audio file", type=["mp3"])
