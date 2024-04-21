@@ -21,14 +21,18 @@ st.set_page_config(layout="wide")
 st.title('Smart Field Assisstant')
 client = OpenAI()
 def stt(file_path):
+  try:
+    audio_file = open(audio, "rb")
+    transcription = client.audio.transcriptions.create(
+      model="whisper-1", 
+      file=audio_file, 
+      response_format="text"
+        )
 
-  audio_file = open(file_path, "rb")
-  transcription = client.audio.transcriptions.create(
-    model="whisper-1",
-    file=audio_file,
-    response_format="text"
-  )
-  return transcription
+      return transcription
+
+    except Exception as e:
+        return f"Exception: {e}"
 
 source_language = st.selectbox("Select Audio Language:", ["English", "Other"])
 audio_file = st.file_uploader("Upload an audio file", type=["mp3"])
