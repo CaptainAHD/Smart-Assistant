@@ -43,13 +43,13 @@ if audio_file is not None:
     # Transcribe audio and update query input field
     st.write("Transcribing audio...")
     
-    transcribed_text = stt(file_path)
+    notes = stt(file_path)
     if transcribed_text:
-        st.write("Query: ", transcribed_text)
+        st.write("Success! ")
     else:
         st.write("Failed to transcribe audio.")
 
-notes = transcribed_text
+
 response = client.chat.completions.create(
     model="gpt-4-1106-preview",
 
