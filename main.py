@@ -22,7 +22,7 @@ st.title('Smart Field Assisstant')
 client = OpenAI()
 def stt(file_path):
   try:
-    audio_file = open(audio, "rb")
+    audio_file = open(file_path, "rb")
     transcription = client.audio.transcriptions.create(
       model="whisper-1", 
       file=audio_file, 
